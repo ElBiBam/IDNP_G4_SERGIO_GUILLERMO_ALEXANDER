@@ -11,4 +11,6 @@
     <string name="hint_nombres">Nombre1 Nombre2</string>
     <string name="hint_apellidos">Apellido1 Apellido2</string>
     <string name="hint_correo">***.***@unsa.edu.pe</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
