@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewStudentActivity">
+
+    <LinearLayout
+        android:id="@+id/verticalLayout_1"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView_courseName"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Introducción al Desarrollo Nuevas Plataformas"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView_teacherName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="Ernesto Suarez"
+            android:textSize="18sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <LinearLayout
+            android:id="@+id/horizontalLayout_1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView_cui"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center|right"
+                android:maxWidth="80dp"
+                android:minWidth="80dp"
+                android:paddingRight="10dp"
+                android:text="CUI"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editText_cui"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/horizontalLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView_lastName"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center|right"
+                android:maxWidth="80dp"
+                android:minWidth="80dp"
+                android:paddingRight="10dp"
+                android:text="Lastname"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editText_lastName"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/horizontalLayout_3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView_name"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center|right"
+                android:maxWidth="80dp"
+                android:minWidth="80dp"
+                android:paddingRight="10dp"
+                android:text="Name"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editText_name"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <LinearLayout
+            android:id="@+id/horizontalLayout_4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button_accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Accept" />
+
+            <Button
+                android:id="@+id/button_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cancel" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
