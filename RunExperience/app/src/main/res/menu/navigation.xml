@@ -12,7 +12,7 @@
 
 <item
     android:id="@+id/nav_running"
-    android:icon="@drawable/search"
+    android:icon="@drawable/running"
     android:title="Start"/>
 <item
     android:id="@+id/nav_songs"

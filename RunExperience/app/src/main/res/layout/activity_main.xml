@@ -29,7 +29,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:background="@color/purple_200"
-        app:itemBackground="@color/primary_color"
+        app:itemBackground="@color/black"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- base set of styles that apply to all versions -->
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- declare the theme name that's actually applied in the manifest file -->
+    <style name="AppTheme" parent="BaseAppTheme" />
+
+    <style name="GreenText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#00FF00</item>
+    </style>
+
+    <!--style name="BottomNavigation">
+        <item name="android:background">@color/purple_200</item>
+
+    </style-->
+</resources>
