@@ -1,10 +1,13 @@
 package com.project.runexperience.ui.view
 
+import android.graphics.drawable.Animatable
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
+import androidx.fragment.app.Fragment
 import com.project.runexperience.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -21,6 +24,7 @@ class SongsFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var imageView: ImageView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +38,21 @@ class SongsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_songs, container, false)
+        var root = inflater.inflate(R.layout.fragment_songs, container, false)
+        var rv = root.findViewById(R.id.linearLayout) as LinearLayout
+        var example = inflater.inflate(R.layout.layout_path_morph, container, false) as View
+        rv.addView(example)
+
+        imageView = (example.findViewById<View>(R.id.image) as ImageView?)!!
+        imageView!!.setOnClickListener { animate() }
+
+        return root
+    }
+    private fun animate() {
+        val drawable = imageView!!.drawable
+        if (drawable is Animatable) {
+            (drawable as Animatable).start()
+        }
     }
 
     companion object {
