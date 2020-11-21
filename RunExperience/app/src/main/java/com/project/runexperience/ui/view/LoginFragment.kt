@@ -1,10 +1,13 @@
 package com.project.runexperience.ui.view
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.fragment.app.Fragment
 import com.project.runexperience.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,20 +25,41 @@ class LoginFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var user: String? = null
+    private var pass: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        val sharedPref = activity?.getSharedPreferences(
+            getString(R.string.preference_file_login), Context.MODE_PRIVATE
+        )
+        user = getString(R.string.login_user)
+        pass = getString(R.string.login_pass)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val root = inflater.inflate(R.layout.fragment_login, container, false)
+        val buttonLogin = root.findViewById<Button>(R.id.button_ingresar)
+        buttonLogin.setOnClickListener { view ->
+            val pa = activity as MainActivity
+            pa.getNavigationView().visibility = View.VISIBLE
+            pa.setFragment(HomeFragment.newInstance())
+        }
+        val buttonRegister = root.findViewById<Button>(R.id.button_register)
+        buttonRegister.setOnClickListener { view ->
+            val intent = Intent(activity, UserRegisterActivity::class.java)
+            startActivity(intent)
+        }
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        return root
     }
 
     companion object {
@@ -49,7 +73,7 @@ class LoginFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             LoginFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)

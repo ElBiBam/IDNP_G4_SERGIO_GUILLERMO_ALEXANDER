@@ -3,6 +3,7 @@ package com.project.runexperience.ui.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -17,16 +18,23 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         toolbar = supportActionBar!!
+        //supportActionBar?.hide()
+
         val bottomNavigation: BottomNavigationView = findViewById(R.id.navigationView)
 
         bottomNavigation.setOnNavigationItemSelectedListener {
             selectItem(it)
         }
-        bottomNavigation.selectedItemId = R.id.nav_home;
+        setFragment(LoginFragment.newInstance())
+        //bottomNavigation.selectedItemId = R.id.nav_login;
+        bottomNavigation.visibility = View.GONE
 //        mainNav.selectedItemId = R.id.nav_profile
 
         //to avoid reload page
         bottomNavigation.setOnNavigationItemReselectedListener { }
+    }
+    public fun getNavigationView(): BottomNavigationView {
+        return findViewById(R.id.navigationView)
     }
 
     private fun selectItem(item: MenuItem): Boolean {
