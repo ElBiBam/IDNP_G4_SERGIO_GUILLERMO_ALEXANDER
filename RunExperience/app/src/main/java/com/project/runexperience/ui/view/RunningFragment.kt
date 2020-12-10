@@ -6,11 +6,13 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.location.Location
 import android.location.LocationManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -18,8 +20,14 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.project.runexperience.R
 import com.project.runexperience.core.services.GPSTracker
+import java.time.Instant
+import java.time.LocalDateTime
+import java.time.ZoneOffset
+import java.time.format.DateTimeFormatter
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -72,14 +80,40 @@ class RunningFragment : Fragment(), OnMapReadyCallback {
         }
     }
     var broadcastReceiver: BroadcastReceiver = object: BroadcastReceiver() {
+        @RequiresApi(Build.VERSION_CODES.O)
         override fun onReceive(context: Context?, intent: Intent?) {
             if (intent!!.hasExtra(LocationManager.KEY_LOCATION_CHANGED)) {
                 val locationChanged = LocationManager.KEY_LOCATION_CHANGED
                 val location = intent.extras!![locationChanged] as Location?
                 val latitude = location!!.latitude
                 val longitude = location.longitude
-                Log.d("gps", "$latitude,$longitude")
+
                 val sydney = LatLng(latitude, longitude)
+                // Write a message to the database
+                val database = Firebase.database
+
+
+                val current = LocalDateTime.now()
+
+                val formatter_fecha = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+                val formatted_fecha = current.format(formatter_fecha)
+
+                val formatter_hora = DateTimeFormatter.ofPattern("HH:mm:ss.SSS")
+                val formatted_hora = current.format(formatter_hora)
+
+                val ref_fecha = database.getReference("fecha")
+                ref_fecha.setValue(formatted_fecha.toString())
+                val ref_hora = database.getReference("hora")
+                ref_hora.setValue(formatted_hora.toString())
+                val ref_latitude = database.getReference("latitude")
+                ref_latitude.setValue(latitude)
+                val ref_longitude = database.getReference("longitude")
+                ref_longitude.setValue(longitude)
+                val ref_speed = database.getReference("speed")
+                ref_speed.setValue(location.speed)
+
+                Log.d("gps", "$formatted_fecha,$formatted_hora,$latitude,$longitude,$location.speed")
+
                 if(googleMap != null) {
                     googleMap!!.addMarker(
                         MarkerOptions().position(sydney)
