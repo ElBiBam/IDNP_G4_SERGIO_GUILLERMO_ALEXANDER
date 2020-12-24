@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_header_selector"
+    android:orientation="vertical"
+    tools:context=".viewmodel.LoginActivity"
+    android:gravity="center">
+
+
+    <ImageView
+        android:id="@+id/login_applogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/logo_background"
+        android:foregroundGravity="center"
+        android:radius="15dp"
+        android:src="@drawable/ic_baseline_directions_run_24" />
+
+    <EditText
+        android:id="@+id/login_email_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_applogo"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginRight="15dp"
+        android:hint="Email"
+        android:inputType="text"
+        android:padding="20dp"
+        android:textColor="@color/colorTexts2"
+        android:textColorHint="@color/colorTexts2"
+        android:textSize="19sp"/>
+
+
+    <EditText
+        android:id="@+id/login_password_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_email_input"
+        android:padding="20dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="6dp"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textColor="@color/colorTexts2"
+        android:textColorHint="@color/colorTexts2"
+        android:textSize="19sp"/>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/login_password_input"
+        android:layout_marginTop="5dp"
+        >
+
+
+        <TextView
+
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Olvidaste tu contraseña?"
+            android:textColor="@color/colorText2"
+            android:textSize="19sp"
+            android:layout_marginLeft="70dp"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+    <!--  android:id="@+id/forget_password_link"-->
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_layout_1"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:padding="17dp"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:text="Ingresar"
+        android:textColor="@color/md_orange_900"
+        android:background="@drawable/corners" />
+    <Button
+        android:id="@+id/register_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_btn"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:padding="17dp"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:text="Registrarse"
+        android:background="@drawable/corners"
+        android:textColor="@color/md_orange_900" />
+    <Button
+        android:id="@+id/anonymus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_btn"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:padding="17dp"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:text="Probar"
+        android:background="@drawable/corners"
+        android:textColor="@color/md_orange_900" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"/>
+
+
+
+
+
+</LinearLayout>

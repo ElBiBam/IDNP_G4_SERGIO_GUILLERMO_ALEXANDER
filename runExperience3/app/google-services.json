@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "308093180461",
+    "project_id": "runexperience-65285",
+    "storage_bucket": "runexperience-65285.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308093180461:android:9fdc87a9480bb20cd1b6a4",
+        "android_client_info": {
+          "package_name": "com.project.runexperience"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "308093180461-3500lb92ni9sgb2dsmf679e4uan1o4hl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.project.runexperience",
+            "certificate_hash": "f88abfba04610659cf16e920a27d223c80d3dbaf"
+          }
+        },
+        {
+          "client_id": "308093180461-ru9eediu8p73ihscpf7980br8fmojufn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCerJd52Iz-X5mmYXlsN8mLxeXq9yBqNYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "308093180461-ru9eediu8p73ihscpf7980br8fmojufn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

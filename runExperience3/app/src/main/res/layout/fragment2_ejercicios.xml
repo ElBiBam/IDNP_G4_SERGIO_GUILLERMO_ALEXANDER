@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/caminarFragment"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:scrollbarSize="30dp"
+            />
+
+        <Chronometer
+            android:id="@+id/timeWalk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/chronometer"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/metersWalk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="0.0"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  mt."
+                android:textSize="25sp"/>
+        </LinearLayout>
+
+
+        <Button
+
+            android:id="@+id/startWalk"
+            android:layout_width="wrap_content"
+            android:layout_height="85dp"
+
+            android:text="Start"
+            android:visibility="visible"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/corners3"
+            />
+
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container_view_tag"
+            class="com.project.runexperience.viewmodel.Fragments.FragmentListWalk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
+
+            tools:layout="@layout/list_fragment_walk" />
+
+    </LinearLayout>
+
+</LinearLayout>
